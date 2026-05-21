@@ -1,0 +1,143 @@
+.navbar {
+  position: sticky;
+  top: 20px;
+  z-index: 1000;
+  margin: 0 2rem;
+  background: rgba(44, 43, 48, 0.85);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid var(--glass-border);
+  padding: 0.75rem 0;
+  border-radius: 4px 40px 4px 40px;
+  /* Unique floating navbar shape */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  transition: var(--transition);
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.navbar-brand {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: -0.04em;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar-brand::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: var(--color-coral);
+  border-radius: 2px;
+  /* Unique square dot */
+  transform: rotate(45deg);
+  box-shadow: 0 0 15px var(--color-coral);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: var(--color-silver);
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 0.5rem 0.25rem;
+  position: relative;
+  transition: var(--transition);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-coral);
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: #fff;
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-user {
+  font-size: 0.75rem;
+  color: var(--color-silver);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.logout-btn {
+  padding: 10px 20px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  background: transparent;
+  color: var(--color-pink);
+  border: 1px solid var(--color-pink);
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.logout-btn:hover {
+  background: var(--color-pink);
+  color: var(--color-charcoal);
+  box-shadow: 0 0 20px rgba(242, 196, 206, 0.3);
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    margin: 10px;
+    border-radius: 12px;
+  }
+
+  .navbar-container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+}
