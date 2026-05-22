@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
   const { user, isAuthenticated } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   return (
     <div className="home-container">
@@ -38,7 +40,7 @@ const HomePage = () => {
         ) : (
           <div className="auth-prompt">
             <p className="prompt-text">Access is restricted to authorized personnel. Please authenticate to proceed into the ecosystem.</p>
-            <button className="unique-login-btn" onClick={() => window.location.href = '/login'}>
+            <button className="unique-login-btn" onClick={() => navigate('/login')}>
               ENTER SYSTEM
             </button>
           </div>
