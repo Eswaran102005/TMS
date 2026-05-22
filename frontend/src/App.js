@@ -38,7 +38,7 @@ const SuperAdminRoute = ({ children }) => {
 
 function App() {
   return (
-    <Router>
+    <Router basename='/TMS'>
       <AuthProvider>
         <Navbar />
         <Routes>
